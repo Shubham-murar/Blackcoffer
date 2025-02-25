@@ -66,7 +66,8 @@ https://dashboard-dcpd.onrender.com/api/data
         }
       });
 
-      const response = await axios.get(`http://127.0.0.1:5000/api/data?${params.toString()}`);
+      const response = await axios.get(`https://dashboard-dcpd.onrender.com/api/data?${params.toString()}`); 
+
       setData(response.data);
     } catch (err) {
       console.error('Error fetching filtered data:', err);
