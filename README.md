@@ -1,28 +1,96 @@
-# blackcoffer-dvd
-Test assignment assign by Blackcoffer to visualize a given data set.
 
-**Steps to Run This Project:**
 
-Step 1: Get the Project Files
-- Download the project's zip file or clone it from the repository to your local system.
+### **Black - Flask + React + MongoDB Dashboard**  
 
-Step 2: Install Required Packages
-- Navigate to the `frontend` directory using your terminal: `cd frontend/`
-- Install necessary packages: `npm install`
-- Similarly, go to the `backend` directory: `cd ../backend/`
-- Install required packages here as well: `npm install`
+## 🚀 Overview  
+This is a full-stack web application that utilizes **Flask** for the backend, **React.js** for the frontend, and **MongoDB** as the database. It provides interactive visualizations and analytics using various chart components.  
 
-Step 3: Launch the Project
-- Start the frontend server: In the `frontend` directory, execute: `npm start`
-- Start the backend server: In the `backend` directory, execute: `npm start`
-  
-**Note:** At this point, you might not see any content on the project interface because the dataset hasn't been provided yet.
+---
 
-Step 4: Import Dataset
-- Open MongoDB Compass and locate the database named "dvd-database."
-- Inside the database, find the collection named "data-sets."
-- Import the dataset using the provided JSON file, `jsondata.json`.
+## 📂 Project Structure  
+```
+BLACK/
+│── backend/               # Flask Backend  
+│   ├── app.py            # Initializes Flask and MongoDB  
+│   ├── config.py         # Stores configuration settings  
+│   ├── routes.py         # Defines API routes  
+│   ├── requirements.txt  # Lists backend dependencies  
+│   ├── Procfile          # Heroku deployment configuration  
+│   └── .venv/            # Virtual environment (ignored in Git)  
+│  
+│── frontend/              # React Frontend  
+│   ├── src/  
+│   │   ├── charts/       # Chart components  
+│   │   │   ├── BarChart.jsx  
+│   │   │   ├── DoughnutChart.jsx  
+│   │   │   ├── LineChart.jsx  
+│   │   │   ├── PieChart.jsx  
+│   │   │   ├── PolarChart.jsx  
+│   │   │   ├── RadarChart.jsx  
+│   │   ├── components/   # Reusable components  
+│   │   ├── App.js        # Main React component  
+│   │   ├── App.css       # Styles  
+│   │   ├── index.js      # Entry point  
+│   ├── public/           # Static files  
+│   ├── build/            # Production build  
+│   ├── package.json      # Frontend dependencies  
+│   ├── package-lock.json # Lockfile  
+│  
+├── .gitignore             # Files to ignore in Git  
+├── README.md              # Project documentation  
+```
 
-Congratulations! You're all set, and both data and charts should now be visible on your screen.
+---
 
-**Note:** If you encounter any visibility issues, consider restarting the project. This might help resolve the problem.
+## 🔧 Setup Instructions  
+
+### **Backend (Flask) Setup**  
+1. Create and activate a virtual environment:  
+   ```sh
+   python -m venv venv
+   source venv/bin/activate   # On macOS/Linux
+   venv\Scripts\activate      # On Windows
+   ```
+2. Install dependencies:  
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the Flask server:  
+   ```sh
+   python app.py
+   ```
+
+---
+
+### **Frontend (React) Setup**  
+1. Navigate to the `frontend` folder:  
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:  
+   ```sh
+   npm install
+   ```
+3. Start the development server:  
+   ```sh
+   npm start
+   ```
+
+---
+
+## 🛠️ Features  
+✅ Interactive visualizations using **React Chart.js**  
+✅ Backend powered by **Flask & MongoDB**  
+✅ REST API for fetching data  
+✅ Responsive UI  
+
+---
+
+## 📌 Deployment  
+- **Frontend**: Can be deployed on **Vercel** or **Netlify**  
+- **Backend**: Can be deployed on **Heroku** or **Render**  
+- **Database**: Uses **MongoDB Atlas** (or local MongoDB instance)  
+
+---
+
+Let me know if you need any **changes or additions**! 🚀🔥
