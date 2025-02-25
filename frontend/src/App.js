@@ -9,7 +9,7 @@ function App() {
 
   // Fetch all data on initial load
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000/api/data')
+    axios.get('https://dashboard-dcpd.onrender.com/api/data')
       .then(res => setData(res.data))
       .catch(err => console.error('Error fetching initial data:', err));
   }, []);
