@@ -26,19 +26,17 @@ const FilterBar = ({ setData }) => {
     country: '',
     city: ''
   });
-https://dashboard-dcpd.onrender.com/api/data
+
   useEffect(() => {
     axios
       .get('https://dashboard-dcpd.onrender.com/api/distinct_values')
       .then((response) => {
         setDistinctValues({
-          // Filter out years greater than 2020 and sort descending
           end_year: response.data.end_year
             .filter(year => Number(year) <= 2020)
             .sort((a, b) => b - a),
           topic: response.data.topic.sort(),
           sector: response.data.sector.sort(),
-          // Standardize "world" to "World" and remove duplicates
           region: Array.from(new Set(response.data.region.map(r => r.toLowerCase() === 'world' ? 'World' : r))).sort(),
           pestle: response.data.pestle.sort(),
           source: response.data.source.sort(),
@@ -67,7 +65,6 @@ https://dashboard-dcpd.onrender.com/api/data
       });
 
       const response = await axios.get(`https://dashboard-dcpd.onrender.com/api/data?${params.toString()}`); 
-
       setData(response.data);
     } catch (err) {
       console.error('Error fetching filtered data:', err);
@@ -87,7 +84,7 @@ https://dashboard-dcpd.onrender.com/api/data
       city: ''
     });
     try {
-      const response = await axios.get('http://127.0.0.1:5000/api/data');
+      const response = await axios.get('https://dashboard-dcpd.onrender.com/api/data');
       setData(response.data);
     } catch (err) {
       console.error('Error resetting data:', err);
