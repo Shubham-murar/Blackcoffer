@@ -26,10 +26,10 @@ const FilterBar = ({ setData }) => {
     country: '',
     city: ''
   });
-
+https://dashboard-dcpd.onrender.com/api/data
   useEffect(() => {
     axios
-      .get('http://127.0.0.1:5000/api/distinct_values')
+      .get('https://dashboard-dcpd.onrender.com/api/distinct_values')
       .then((response) => {
         setDistinctValues({
           // Filter out years greater than 2020 and sort descending
