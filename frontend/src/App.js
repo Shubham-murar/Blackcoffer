@@ -1,35 +1,24 @@
-import React, { useEffect, useState } from 'react';
+// App.js
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
-
-import Header from './components/Header';
-import Chartboard from './components/Chartboard';
-
+import FilterBar from './components/FilterBar';
+import Charts from './components/Charts'; // or however your chart is named
 
 function App() {
-    const [mainData, setMainData] = useState([]);    
-    const getDataFromDB = async() => {
-        try{
-            const response = await axios.get("http://localhost:8000/api/data/all");
-            setMainData(response.data.data)
-        }
-        catch(e){
-            console.log(e)
-        }
-    }
+  const [data, setData] = useState([]);
 
-    useEffect(()=>{
-        getDataFromDB();
-    },[])
-
-    useEffect(()=>{
-  
-    },[mainData])
+  // Fetch all data on initial load
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000/api/data')
+      .then(res => setData(res.data))
+      .catch(err => console.error('Error fetching initial data:', err));
+  }, []);
 
   return (
-    <div>
-      <Header/>
-      <Chartboard data={mainData} setMainData={setMainData} />
+    <div style={{ padding: '1rem' }}>
+      <h1 style={{ textAlign: 'center' }}>Dashboard</h1>
+      <FilterBar setData={setData} />
+      <Charts data={data} />
     </div>
   );
 }

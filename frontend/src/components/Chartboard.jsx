@@ -31,3 +31,4 @@ const Chartboard = ({ data, setMainData }) => {
 }
 
 export default Chartboard
+
