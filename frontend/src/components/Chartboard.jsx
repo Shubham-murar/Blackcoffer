@@ -9,7 +9,7 @@ const Chartboard = ({ data, setMainData }) => {
     const handleSearchResult = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`http://localhost:8000/api/data/any/${search}`);
+            const response = await axios.get(`https://dashboard-dcpd.onrender.com/api/data/any/${search}`);  
             setMainData(response.data.data);
             setSearch("");
         }
